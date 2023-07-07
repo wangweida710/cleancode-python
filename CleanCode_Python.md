@@ -1,7 +1,5 @@
-# clean-code-python
+# Clean Code - Python
 
-[![Build Status](https://travis-ci.com/zedr/clean-code-python.svg?branch=master)](https://travis-ci.com/zedr/clean-code-python)
-[![](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/download/releases/3.8.3/)
 
 ## Table of Contents
 
@@ -15,23 +13,12 @@
     4. [I: Interface Segregation Principle (ISP)](#interface-segregation-principle-isp)
     5. [D: Dependency Inversion Principle (DIP)](#dependency-inversion-principle-dip)
 6. [Don't repeat yourself (DRY)](#dont-repeat-yourself-dry)
-7. [Translations](#translations)
+
 
 ## Introduction
 
-Software engineering principles, from Robert C. Martin's book
-[*Clean
-Code*](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882)
-, adapted for Python. This is not a style guide. It's a guide to producing
+Clean Code, adapted for Python, will guide software engineer to producing
 readable, reusable, and refactorable software in Python.
-
-Not every principle herein has to be strictly followed, and even fewer will be
-universally agreed upon. These are guidelines and nothing more, but they are
-ones codified over many years of collective experience by the authors of *Clean
-Code*.
-
-Adapted
-from [clean-code-javascript](https://github.com/ryanmcdermott/clean-code-javascript)
 
 Targets Python3.7+
 
@@ -47,7 +34,7 @@ import datetime
 ymdstr = datetime.date.today().strftime("%y-%m-%d")
 ```
 
-Additionally, there's no need to add the type of the variable (str) to its
+ymdstr is a bad name, also no need to add the type of the variable (str) to its
 name.
 
 **Good**:
@@ -58,7 +45,7 @@ import datetime
 current_date: str = datetime.date.today().strftime("%y-%m-%d")
 ```
 
-**[⬆ back to top](#table-of-contents)**
+
 
 ### Use the same vocabulary for the same type of variable
 
@@ -113,7 +100,7 @@ class User:
         return Record()
 ```
 
-**[⬆ back to top](#table-of-contents)**
+
 
 ### Use searchable names
 
@@ -141,7 +128,7 @@ SECONDS_IN_A_DAY = 60 * 60 * 24
 time.sleep(SECONDS_IN_A_DAY)
 ```
 
-**[⬆ back to top](#table-of-contents)**
+
 
 ### Use explanatory variables
 
@@ -189,7 +176,7 @@ if matches:
     print(f"{matches['city']}, {matches['zip_code']}")
 ```
 
-**[⬆ back to top](#table-of-contents)**
+
 
 ### Avoid Mental Mapping
 
@@ -221,7 +208,6 @@ for location in locations:
     print(location)
 ```
 
-**[⬆ back to top](#table-of-contents)**
 
 ### Don't add unneeded context
 
@@ -246,7 +232,6 @@ class Car:
     color: str
 ```
 
-**[⬆ back to top](#table-of-contents)**
 
 ### Use default arguments instead of short circuiting or conditionals
 
@@ -367,7 +352,6 @@ def email_client(clients: Iterator[Client]) -> None:
         email(client)
 ```
 
-**[⬆ back to top](#table-of-contents)**
 
 ### Function arguments (2 or fewer ideally)
 
@@ -555,7 +539,7 @@ create_menu(
 )
 ```
 
-**[⬆ back to top](#table-of-contents)**
+
 
 ### Function names should say what they do
 
@@ -584,7 +568,7 @@ message = Email()
 message.send()
 ```
 
-**[⬆ back to top](#table-of-contents)**
+
 
 ### Functions should only be one level of abstraction
 
@@ -651,7 +635,7 @@ def parse(tokens: List) -> List:
     return syntax_tree
 ```
 
-**[⬆ back to top](#table-of-contents)**
+
 
 ### Don't use flags as function parameters
 
@@ -688,7 +672,7 @@ def create_temp_file(name: str) -> None:
     (Path(gettempdir()) / name).touch()
 ```
 
-**[⬆ back to top](#table-of-contents)**
+
 
 ### Avoid side effects
 
@@ -1596,16 +1580,3 @@ company_managers_list = get_employee_list(employees=company_managers)
 
 **[⬆ back to top](#table-of-contents)**
 
-## **Translations**
-
-This document is also available in other languages:
-
-- 🇨🇳 **
-  Chinese** [yinruiqing/clean-code-python](https://github.com/yinruiqing/clean-code-python)
-- 🇰🇷 ** Korean ** [wooy0ng/clean-code-python](https://github.com/wooy0ng/clean-code-python)
-- 🇵🇹 🇧🇷 **
-  Portugese** [fredsonchaves07/clean-code-python](https://github.com/fredsonchaves07/clean-code-python)
-- 🇮🇷 **
-  Persian:** [SepehrRasouli/clean-code-python](https://github.com/SepehrRasouli/clean-code-python)
-
-**[⬆ back to top](#table-of-contents)**
