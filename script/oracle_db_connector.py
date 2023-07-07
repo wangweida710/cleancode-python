@@ -82,17 +82,11 @@ class OracleDbConnector(DBConnector)
        self.result = self.cursor.fetchall    
     self.conn.commit()
     return.self
-
+    
+  @icontract.ensure(lambda self: self.conn.closed == 1, "Connection must be initialized")
+  @icontract.ensure(lambda self: self.cursor.closed is True, "Cursor must be initialized")
   def close_connection(self):
     print("[{} - {}] Closing DB Connection".format(datetime.now(), 'INFO'))
     self.curosr.close()
     self.conn.close()
     return self
-
-
-
-
-
-    
-
-
